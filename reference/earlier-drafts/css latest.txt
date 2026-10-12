@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(83, 81, 82, 1);
+    overflow: hidden;
+}
+
+#screen {
+    width: 100vw;
+    height: 100vw;
+    background-color: #222;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* Outer container (border simulation) */
+#diamond-container {
+    width: 75%;
+    aspect-ratio: 1 / 1.7; /* Matches the diamond shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: black; /* Border color */
+}
+
+#diamond {
+    width: 80%;
+    aspect-ratio: 1 / 1.7; /* Matches the diamond shape */
+    background-color: rgba(171, 242, 40, 1);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 0 15px #4caf50, 0 0 30px #4caf50 inset; */
+}
+
+#alien-icon {
+    max-width: 20%;
+    max-height: 20%;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px #4caf50, 0 0 30px #4caf50 inset;
+    }
+    50% {
+        box-shadow: 0 0 25px #8ff542, 0 0 40px #8ff542 inset;
+    }
+}

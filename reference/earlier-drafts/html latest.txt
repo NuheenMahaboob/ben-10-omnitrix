@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Omnitrix App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="diamond-container">
+        <div id="diamond">
+            <img src="images/alien.png" alt="Alien Icon yay">
+        </div>
+    </div>
+    <audio id="alien-sound"></audio>
+    <script src="js/main.js"></script>
+</body>
+</html>

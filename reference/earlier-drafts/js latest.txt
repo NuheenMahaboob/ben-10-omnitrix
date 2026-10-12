@@ -1,0 +1,28 @@
+const aliens = [
+    { name: "Heatblast", sound: "sounds/notification-2-269292.mp3", image: "alien1.png" },
+    { name: "Four Arms", sound: "sounds/notification-2-269292.mp3", image: "alien2.png" },
+    { name: "Diamondhead", sound: "sounds/notification-2-269292.mp3", image: "alien3.png" },
+    { name: "XLR8", sound: "sounds/notification-2-269292.mp3", image: "alien4.png" },
+];
+
+let currentIndex = 0;
+
+function updateDisplay() {
+    const alienIcon = document.getElementById("alien-icon");
+    const alienSound = document.getElementById("alien-sound");
+
+    alienIcon.src = aliens[currentIndex].image;
+    alienSound.src = aliens[currentIndex].sound;
+    alienSound.play();
+}
+
+document.addEventListener("rotarydetent", (event) => {
+    if (event.detail.direction === "CW") {
+        currentIndex = (currentIndex + 1) % aliens.length;
+    } else {
+        currentIndex = (currentIndex - 1 + aliens.length) % aliens.length;
+    }
+    updateDisplay();
+});
+
+updateDisplay();

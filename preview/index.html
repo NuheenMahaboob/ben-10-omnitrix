@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omnitrix — desktop preview</title>
+<style>
+body{margin:0;background:#101310;color:#e7f2e7;font:16px system-ui;text-align:center;padding:24px}h1{color:#abf228;margin:0 0 8px}p{color:#bdc8bd}iframe{display:block;width:360px;height:360px;max-width:90vw;max-height:90vw;border:8px solid #303630;border-radius:50%;margin:24px auto;background:black}button{background:#abf228;color:#17200a;border:0;border-radius:8px;padding:12px 18px;margin:4px;font:inherit;cursor:pointer}.hint{font-size:14px}
+</style>
+<h1>Omnitrix</h1>
+<p>Your Tizen watch app, running in a desktop preview.</p>
+<iframe id="watch" src="../OmnitrixApp/index.html" title="Omnitrix watch"></iframe>
+<button id="previous">← Previous alien</button>
+<button id="next">Next alien →</button>
+<button id="reset">Back / Reset</button>
+<p class="hint">Tap the watch to open. Select an alien, then tap to transform.<br>After the video, tap to power down. Tap again when red to return.<br>Arrow keys simulate the bezel; Escape simulates the watch’s back button.</p>
+<script>
+const watch=document.getElementById('watch');
+function bezel(direction){watch.contentDocument.dispatchEvent(new watch.contentWindow.CustomEvent('rotarydetent',{detail:{direction}}));}
+function back(){watch.contentDocument.dispatchEvent(new watch.contentWindow.CustomEvent('tizenhwkey',{detail:{},keyName:'back'}));watch.contentWindow.resetApp();}
+document.getElementById('previous').onclick=()=>bezel('CCW');
+document.getElementById('next').onclick=()=>bezel('CW');
+document.getElementById('reset').onclick=back;
+function keys(event){if(event.key==='ArrowRight')bezel('CW');if(event.key==='ArrowLeft')bezel('CCW');if(event.key==='Escape')back();}
+document.addEventListener('keydown',keys);
+watch.addEventListener('load',()=>watch.contentDocument.addEventListener('keydown',keys));
+</script>
+</html>
+

@@ -1,0 +1,19 @@
+# Generated Tizen packages and signing material
+*.wgt
+.sign/
+*.p12
+*.pfx
+*.pem
+*.key
+author-signature.xml
+signature1.xml
+.manifest.tmp
+# Local IDE state and build output
+.settings/
+.metadata/
+.buildResult/
+build/
+dist/
+*.log
+.DS_Store
+Thumbs.db

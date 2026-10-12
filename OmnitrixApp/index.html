@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnitrix App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div id="home-screen">
+        <img id="home-image" src="images/omnitrix.png" alt="Omnitrix Icon">
+    </div>
+
+    <!-- Alien Selection Screen -->
+    <div id="alien-selection-screen" style="display: none;">
+        <div id="diamond-container">
+            <div id="diamond">
+                <img id="alien-icon" src="images/alien1.png" alt="Alien Icon">
+            </div>
+        </div>
+        <!-- Transformation Video -->
+        <video id="transformation-video" src="videos/transformation.mp4" style="display: none;"></video>
+    </div>
+
+    <!-- Blinking Screen -->
+    <div id="white-screen" style="display: none;">
+        <img id="after-image" src="images/after.png" alt="Overlay Image">
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="opening-sound" src="sounds/opening.mp3"></audio>
+    <audio id="transition-sound" src="sounds/transition.mp3"></audio>
+    <audio id="alien-sound"></audio>
+    <audio id="loop-sound" src="sounds/loop.mp3" loop></audio>
+    <audio id="transformation-sound" src="sounds/transformation.mp3"></audio>
+    <audio id="powerdown-sound" src="sounds/powerdown.mp3"></audio>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
